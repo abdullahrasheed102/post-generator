@@ -22,7 +22,7 @@ model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-capt
 @tool
 def analyze_image(image_path: str) -> str:
     """
-    Generates a caption from a manually provided image file path using BLIP.
+    Generate detailed scene description (including subjects, environment, mood, style, colors, and composition
     Args:
         image_path (str): Full path to a local image file
     Returns:
