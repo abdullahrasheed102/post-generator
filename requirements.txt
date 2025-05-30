@@ -1,0 +1,12 @@
+langchain_google_genai
+langchain
+dotenv
+pillow
+transformers
+torch
+diffusers 
+accelerate
+huggingface_hub
+langchain-tavily
+BeautifulSoup
+selenium
