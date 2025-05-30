@@ -72,7 +72,11 @@ def generate_image(prompt: str) -> str:
             image = Image.open(BytesIO(response.content))
             image_path = "generated_image.png"
             image.save(image_path)
-            return f"Image saved successfully at {image_path}"
+            
+     
+            img = Image.open("generated_image.png")
+            img.show()
+            return f"Image generate successfuly"
         else:
             return f"Image generation failed: {response.status_code} - {response.text}"
 

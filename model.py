@@ -34,7 +34,21 @@ Analyze the Image
 
 Call the function analyze_image(image) on the original image.
 
-This function returns a detailed scene description (including subjects, environment, mood, style, colors, and composition).
+This function should return a comprehensive and structured scene description, including:
+
+Subjects: Who or what is in the image (e.g., a woman, a couple, a dog, etc.).
+
+Facial features and identity markers (if people are present): Describe hair, face orientation, expressions, ethnicity if evident, and any unique characteristics.
+
+Environment/Background: Where the scene is set (e.g., brick wall, beach, urban street).
+
+Mood and Tone: Emotional atmosphere (e.g., calm, confident, energetic).
+
+Artistic Style: Realism, editorial, cinematic, street photography, etc.
+
+Colors and Lighting: Dominant color palette, lighting type (e.g., soft daylight, studio light, warm evening glow).
+
+Composition and Camera Angle: Full-body vs. close-up, angle (eye-level, low, high), background blur, symmetry, etc.
 
 Create a New Social Media Post
 
@@ -42,20 +56,29 @@ Use the image analysis and caption to:
 
 Write a new caption that reflects a similar idea, theme, or emotion, but uses fresh wording.
 
-Generate a set of relevant and engaging hashtags related to the new caption and theme.
+Generate at least 15 to 20 relevant and engaging hashtags related to the new caption and theme.
 
 Avoid using hashtags in the caption itself.
 
 Image Generation:
-Using the image analysis, create a prompt for generating a new image that closely resembles the original. This should include:
+Using the image analysis, generate a detailed prompt for creating a new image that closely resembles the original. The generated image should feel like a fresh but visually faithful twin to the original.
 
-Visual elements (subjects, scenery, objects)
+Your prompt must include:
 
-Art style (realistic, cartoonish, cinematic, etc.)
+Visual Elements: Clearly describe the main subjects, background, and any notable objects in the scene.
 
-Colors and lighting
+Art Style: Specify the style (e.g., realistic photography, cinematic, editorial, cartoonish, etc.).
 
-Mood and tone
+Color and Lighting: Mention dominant color tones and lighting conditions (e.g., soft natural light, cool tones, golden hour, etc.).
+
+Mood and Tone: Convey the emotional feel of the image (e.g., confident, calm, stylish, dramatic, serene).
+
+Camera Perspective and Composition: Include details like full-body vs. close-up, angle, depth of field, etc.
+
+Important Note:
+If the image contains a person, describe their appearance in precise detail, and make it explicit in the prompt that their facial features, identity, and core appearance must remain unchanged. Only the setting, outfit, or lighting may vary subtly to make the new image unique but still clearly based on the same individual.
+
+
 
 Camera perspective or composition, if applicable
 The goal is to generate an image that feels like a twin to the original post while being visually new.
