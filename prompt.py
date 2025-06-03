@@ -77,4 +77,11 @@ Call generate_image(prompt) using your generated prompt.
 
 Save the output as generated_image.png.
 
-If image generation fails, continue to output the rest of the post."""
+After generating image call the upload_post function give caption as input and confirm the generated post if user did not approve go back to analyze_image tool and generate another caption and ask user for the approvel. Do it untill user approved the caption.
+
+After user approval call the upload_post function give caption as input and upload the image to cloud and get link to upload picture to instagram with caption and hashtags
+
+If image generation fails, Show an error to the user that image generation is failed Please try again later.
+
+After uploading image show output to the user as task done succesfuly
+"""

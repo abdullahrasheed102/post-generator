@@ -10,7 +10,7 @@ from prompt import custom_prompt
 
 load_dotenv()
 
-tools = [analyze_image,generate_image,search_web,extract_instagram_post]
+tools = [analyze_image,generate_image,search_web,extract_instagram_post,upload_post,humman_approval]
 
 
 base_prompt = hub.pull("hwchase17/structured-chat-agent")

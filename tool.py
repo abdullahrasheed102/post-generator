@@ -1,4 +1,4 @@
-import os
+import os, json
 from PIL import Image
 from transformers import BlipProcessor, BlipForConditionalGeneration
 from langchain_core.tools import tool
@@ -8,15 +8,20 @@ from langchain_tavily import TavilySearch
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
 import requests
 import re
+from instagrapi import Client
 
 
+load_dotenv()
 
 
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
 model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 
+username = os.getenv("username")
+password = os.getenv("password")
 
 
 @tool
@@ -73,10 +78,7 @@ def generate_image(prompt: str) -> str:
             image_path = "generated_image.png"
             image.save(image_path)
             
-     
-            img = Image.open("generated_image.png")
-            img.show()
-            return f"Image generate successfuly"
+            return f"Image generate successfuly {image_path}"
         else:
             return f"Image generation failed: {response.status_code} - {response.text}"
 
@@ -159,3 +161,28 @@ def extract_instagram_post(url: str) -> dict:
 
     finally:
         driver.quit()
+
+@tool
+def upload_post(caption: str , image_path: str)-> str:
+    """get generated data and upload post on instagram"""
+    cl = Client()
+    cl.login(username, password)
+
+    try:
+        cl.photo_upload(path=image_path, caption=caption)
+        return("Image uploaded successfully")
+    except Exception as e:
+        return(f"Error uploading image: {e}")
+    
+@tool
+def humman_approval(caption:str) ->str:
+    """Show user caption and ask for the approval """
+    input_msg = (
+        f"Do you approve of the following post content\n\n{caption}\n\n"
+        "Anything except 'Y'/'Yes' (case-insensitive) will be treated as a no.\n >>>"
+    )
+    response = input(input_msg)
+    if response.lower() in ("yes", "y"):
+        return f"Caption approved by the user"
+    else:
+        return f"Caption not approved by the user"

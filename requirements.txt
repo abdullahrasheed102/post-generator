@@ -10,3 +10,4 @@ huggingface_hub
 langchain-tavily
 BeautifulSoup
 selenium
+instagrapi
